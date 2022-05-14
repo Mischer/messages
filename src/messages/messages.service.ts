@@ -1,4 +1,4 @@
-import {MessagesRepository} from "./messages.repository";
+import { MessagesRepository } from './messages.repository';
 
 export class MessagesService {
   messageRepo: MessagesRepository;
@@ -8,6 +8,14 @@ export class MessagesService {
   }
 
   findOne(id: string) {
-    return this.messageRepo.findAll(id);
+    return this.messageRepo.findOne(id);
+  }
+
+  findAll() {
+    return this.messageRepo.findAll();
+  }
+
+  create(content: string) {
+    return this.messageRepo.create(content);
   }
 }
