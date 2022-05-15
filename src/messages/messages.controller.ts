@@ -11,12 +11,8 @@ import { MessagesService } from './messages.service';
 
 @Controller('messages')
 export class MessagesController {
-  messagesService: MessagesService;
+  constructor(public messagesService: MessagesService) {}
 
-  constructor() {
-    // FIXME use dep injection
-    this.messagesService = new MessagesService();
-  }
   @Get()
   listMessages() {
     return this.messagesService.findAll();
